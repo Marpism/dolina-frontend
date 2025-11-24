@@ -1,0 +1,53 @@
+@import url(../vendor/fonts/Inter_Web/inter.css);
+@import url(../vendor/normalize.css);
+
+/* .page {
+} */
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "inter", Arial, sans-serif;
+  position: relative;
+  
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* Общие миксы */
+
+.pointer {
+  cursor: pointer;
+}
+
+.hover_type_normal {
+  transition: 0.3s;
+}
+
+.hover_type_normal:hover {
+  opacity: 0.7;
+}
+
+.color_white {
+  color: white;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.flex_type_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_type_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

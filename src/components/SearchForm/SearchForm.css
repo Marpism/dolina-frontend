@@ -1,0 +1,77 @@
+.search-form {
+  height: 32px;
+  display: flex;
+}
+
+.search-form_mobile {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 38px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.search-form__input {
+  border: 1px solid black;
+  padding: 2px 2px 2px 10px;
+}
+
+.search-form__input_mobile {
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgb(247, 247, 247);
+  border: none;
+  padding: 2px 20px 2px 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.search-form__input_mobile :focus {
+  border: 2px solid #00897b;
+}
+
+.mobile-glass {
+  width: 15px;
+  height: 15px;
+  background-image: url(../../images/magnifying-glass-bold_16.svg);
+  position: absolute;
+  right: 20px;
+  top: 11px;
+  opacity: 0.6;
+}
+
+/* хочется сделать затемнение всего окна */
+.search-form__input:focus-visible {
+  outline: none;
+}
+
+.search-form__submit-button {
+  width: 40px;
+  height: 100%;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: black;
+  background-image: url("../../images/magnifying-glass.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.burger__container .search-form__input_mobile {
+  width: 85%;
+}
+
+@media screen and (max-width: 1180px) {
+  .search-form__input {
+    max-width: 130px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .search-form__input_mobile {
+    font-size: 14px;
+  }
+}

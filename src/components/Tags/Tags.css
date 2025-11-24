@@ -1,0 +1,287 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-count {
+  font-weight: 100;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.tag-label {
+  position: relative;
+}
+
+.sorting__button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+  padding: 0;
+}
+
+.sorting__button:hover {
+  opacity: 0.8;
+}
+
+.tag-button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 1px;
+  height: 1px;
+  color: white;
+  overflow: hidden;
+  display: none;
+  clip-path: inset(0 0 0 0);
+}
+
+.tag-pseudo-button {
+  height: 28px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  background-color: rgb(235 235 235);
+  transition: 0.2s;
+  width: max-content;
+}
+
+.tag-pseudo-button:hover {
+  background-color: rgb(204, 204, 204);
+}
+
+.tag-button:hover + .tag-pseudo-button {
+  border-color: #000000;
+}
+
+.tag-button:checked + .tag-pseudo-button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.tag-button:checked + .sorting-dropdown__button {
+  background-color: #004d40;
+  color: white;
+}
+
+.tag-button:checked + .tag-pseudo-button .tags__dropdown {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+/* .tag-section {
+} */
+
+.sorting-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tag-area {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-area_mobile {
+  margin-top: 20px;
+  padding-left: 10px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 10px;
+}
+
+.tag-area_mobile::-webkit-scrollbar {
+  width: 0;
+}
+
+.sorting-dropdown {
+  position: relative;
+}
+
+.sorting-dropdown__button {
+  height: 35px;
+  border: 1px solid rgb(214, 221, 212);
+  border-radius: 5px;
+  padding: 0 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #000000;
+  font-weight: 500;
+  background-color: transparent;
+  transition: 0.2s;
+  width: max-content;
+}
+
+.sorting-dropdown__button:hover {
+  border: 1px solid rgb(149, 150, 149);
+}
+
+.sorting-content {
+  display: none;
+  width: 292px;
+  max-height: 400px;
+  border-radius: 5px;
+  background-color: white;
+  overflow-y: scroll;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  z-index: 10;
+  position: absolute;
+  top: 50px;
+  left: 5px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.sorting-content_visible {
+  display: block;
+}
+
+.tag-button_dropdown {
+  position: absolute;
+  top: 9px;
+  overflow: hidden;
+  /* clip-path: inset(0 0 0 0); */
+}
+
+.tag-pseudo-checkbox {
+  height: 30px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  /* изменить стиль */
+}
+
+.tag-button:hover + .tag-pseudo-checkbox {
+  border-color: #000000;
+}
+
+.tag-button:checked + .tag-pseudo-checkbox {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: 2px solid black;
+}
+
+.sorting-button {
+  height: 40px;
+  width: 90px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  font-size: 16px;
+  position: sticky;
+  left: 240px;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.sorting_by button {
+  background-color: white;
+  border: none;
+  text-align: left;
+  color: black;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.stone-search {
+  width: 100%;
+  margin-bottom: 15px;
+  height: 35px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 16px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.stone-search:focus {
+  background-color: rgb(243, 250, 255);
+  border: 1px solid gray;
+}
+
+.color_ball {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 20px;
+  margin: 8px;
+  box-shadow: inset 0 0 1px 1px #0000001c;
+}
+
+.category-header {
+  font-size: 20px;
+  margin: 30px 0 30px 0;
+}
+
+.tags_flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .tag-section {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .sorting-content {
+    position: fixed;
+    top: 250px;
+    left: 10px;
+    width: 80%;
+    max-height: 300px;
+  }
+
+  .sorting-button {
+    visibility: visible;
+  }
+
+  .sorting-area {
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d5d5d5;
+  }
+
+  .category-header {
+    margin: 20px 0 20px 0;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .sorting-dropdown__button {
+    font-size: 13px;
+    height: 30px;
+  }
+}

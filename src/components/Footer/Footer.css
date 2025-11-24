@@ -1,0 +1,35 @@
+.footer {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #efefef;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.footer-details {
+  font-size: 13px;
+  font-weight: 300;
+  margin: 3px 0;
+  color: gray;
+}
+
+.footer_block_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-header {
+  margin: 10px 0;
+}
+
+.footer-pics {
+  width: 180px;
+  filter: grayscale();
+}

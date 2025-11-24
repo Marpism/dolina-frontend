@@ -1,0 +1,154 @@
+.cart-product {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.cart-product:first-of-type {
+  padding-top: 0;
+}
+
+.cart-product:last-of-type {
+  border: none;
+}
+
+.cart-product__checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  position: relative;
+}
+
+.cart-product__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  color: white;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+.cart-product__pseudo-checkbox {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 2px solid grey;
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.cart-product__checkbox:checked + .cart-product__pseudo-checkbox {
+  background-color: rgb(1, 51, 66);
+  background-image: url("../../../images/check-bold.svg");
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cart-product__image-container {
+  width: 100px;
+  height: 125px;
+  position: relative;
+  margin-right: 15px;
+}
+
+.cart-product__image-container_nostock {
+  opacity: 0.6;
+}
+
+.cart-product__image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cart-product__title {
+  margin: 0;
+  margin-top: 16px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.cart-product__size {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+.cart-product__button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  opacity: 0.4;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+
+.cart-product__button:hover {
+  opacity: 0.8;
+}
+
+.cart-product__like-button {
+  background-image: url("../../../images/heart-fill_24.svg");
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.cart-product__like-button_active {
+  background-image: url("../../../images/heart-fill_red_24.svg");
+  margin-right: 4px;
+  opacity: 1;
+}
+
+.cart-product__delete-button {
+  cursor: pointer;
+  background-image: url("../../../images/trash-fill_24.svg");
+}
+
+.cart-product__price-container {
+  display: flex;
+}
+
+.cart-product__price {
+  margin-top: 16px;
+}
+
+.cart-product__last {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 6px 0 12px 0;
+  color: #b33127;
+}
+
+@media screen and (max-width: 520px) {
+  .cart-product {
+    flex-direction: column;
+    padding: 15px 0 0 0;
+  }
+
+  .cart-product__price-container {
+    justify-content: flex-end;
+  }
+
+  .cart-product__price {
+    margin: 0;
+  }
+
+  .cart-product__info {
+    width: 65%;
+  }
+
+  .cart-product__title {
+    font-size: 15px;
+  }
+
+  .cart-product__price-container {
+    padding-bottom: 15px;
+  }
+}

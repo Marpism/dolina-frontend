@@ -1,0 +1,219 @@
+.about {
+  min-height: 60vh;
+  margin-top: 50px;
+}
+
+.reviews {
+  min-height: 60vh;
+}
+
+.about__header {
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.about__subheader {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.about__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.about__maintext {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.about__masonry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 25px;
+}
+
+.about__masonry-item {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+}
+
+.about__code {
+  max-width: 45%;
+}
+
+.about__principles {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about__bullet {
+  margin-right: 15px;
+}
+
+.about__principles-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about__viptext {
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px dotted gray;
+  padding-bottom: 15px;
+  margin: 15px 0 0 0;
+  box-sizing: border-box;
+}
+
+.about__masonry-item_logo {
+  object-fit: contain;
+  filter: invert();
+  background-color: #feb5ce;
+}
+
+.delivery__main-header {
+  margin-bottom: 40px;
+}
+
+.delivery__header {
+  font-size: 25px;
+  font-weight: 500;
+  color: #00695c;
+}
+
+.delivery__main-text {
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.delivery__notion {
+  background-color: #fff6e2;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: 1px solid #ffc0c0;
+  text-align: center;
+}
+
+.delivery__table_ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+}
+
+.delivery__table-unit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.delivery__logo {
+  width: 350px;
+}
+
+.delivery__link-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.order__timer {
+  color: #ff5722;
+  width: 70px;
+  font-weight: 600;
+}
+
+.delivery__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.delivery__link {
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 600;
+  color: #009688;
+  margin: 5px 0;
+  transition: 0.2s;
+}
+
+.delivery__link:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1200px) {
+  .license {
+    margin: 0 10px;
+  }
+
+  .new-category-header {
+    margin-left: 10px;
+  }
+
+  .about__subheader {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .about {
+    margin: 0 10px;
+  }
+
+  .reviews {
+    margin: 0 10px;
+  }
+
+  .about__masonry {
+    width: 100%;
+  }
+
+  .delivery {
+    margin: 0 15px 90px 15px;
+  }
+
+  .delivery__main-text {
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 928px) {
+  .about__container {
+    flex-direction: column;
+  }
+
+  .about__header {
+    margin: 20px 0;
+  }
+
+  .about__principles {
+  }
+
+  .about__masonry-item {
+    width: 170px;
+    height: 170px;
+  }
+
+  .about__code {
+    max-width: 100%;
+  }
+
+  .delivery__logo {
+    width: 30%;
+  }
+
+  .delivery__link {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 4px 0;
+  }
+}

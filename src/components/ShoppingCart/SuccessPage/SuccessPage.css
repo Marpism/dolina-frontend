@@ -1,0 +1,38 @@
+.success-page {
+  min-height: 80vh;
+  /* display: flex; */
+}
+
+.success-header {
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+}
+
+.success-maintext {
+  text-align: center;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .success-page {
+    margin: 0 10px;
+  }
+
+  .success-maintext {
+    margin: 0 20px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .success-header {
+    font-size: 20px;
+    margin-top: 200px;
+  }
+
+}
