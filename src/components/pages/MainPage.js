@@ -3,6 +3,7 @@ import MobileNavBar from '../MobileNavBar/MobileNavBar';
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import productsApi from "../../utils/Api";
+import Skeleton from 'react-loading-skeleton';
 import MainBanner from "../MainBanner/MainBanner";
 import ringIcon from '../../images/icon_ring_1.svg';
 import earringIcon from '../../images/icon_ear_1.svg';
@@ -10,13 +11,14 @@ import beadsIcon from '../../images/icon_beads1.svg';
 import braceletIcon from '../../images/icon_bracelet_1.svg';
 import neckIcon from '../../images/icon_neck_2.svg';
 import broachIcon from '../../images/icon_broach_3.svg';
-import complecticon from '../../images/icon_complect_2.svg';
+import complectIcon from '../../images/icon_complect_2.svg';
 import pendIcon from '../../images/icon_pend_2.svg';
 
 export default function MainPage({ onCardClick, onLikeClick, products, setProducts, savedProducts, isLoggedIn, terms, onCatClick, category, onBurgerClick, onBurgerClose, isBurgerOpen, search, setSearch, orders, cart, fetchProducts }) {
 
   const navigate = useNavigate();
   const [selectedProducts, setSelectedproducts] = useState([]);
+  const icons = [ringIcon, earringIcon, beadsIcon, braceletIcon, neckIcon, broachIcon, complectIcon, pendIcon]; 
 
   useEffect(() => {
     document.title = "Долина самоцветов — украшения с природным камнем родом с Урала"
@@ -38,11 +40,12 @@ export default function MainPage({ onCardClick, onLikeClick, products, setProduc
       <MainBanner></MainBanner>
       <nav className="main-categories">
         <h1 className="categories-header">Категории</h1>
+       { (!icons ? <Skeleton height={647} width="100%" /> :
         <ul className="categories-list">
           <li className="categories-item">
             <a href='/catalog/?category=44' className="categories-link">
               <div className='category-cover'>
-                <img className='category-pic_m' src={earringIcon}></img>
+                <img className='category-pic_m' src={earringIcon} alt="серьги"></img>
               </div>
               <h2 className='category-title'>Серьги</h2>
             </a>
@@ -50,7 +53,7 @@ export default function MainPage({ onCardClick, onLikeClick, products, setProduc
           <li className="categories-item">
             <a href='/catalog/?category=40' className="categories-link">
               <div className='category-cover'>
-                <img className='category-pic_xs' src={ringIcon}></img>
+                <img className='category-pic_xs' src={ringIcon} alt="кольца"></img>
               </div>
               <h2 className='category-title'>Кольца</h2>
             </a>
@@ -58,7 +61,7 @@ export default function MainPage({ onCardClick, onLikeClick, products, setProduc
           <li className="categories-item">
             <a href='/catalog/?category=6' className="categories-link">
               <div className='category-cover'>
-                <img className='category-pic_m' src={beadsIcon}></img>
+                <img className='category-pic_m' src={beadsIcon} alt="бусы"></img>
               </div>
               <h2 className='category-title'>Бусы</h2>
             </a>
@@ -67,7 +70,7 @@ export default function MainPage({ onCardClick, onLikeClick, products, setProduc
           <li className="categories-item">
             <a href='/catalog/?category=25' className="categories-link">
               <div className='category-cover'>
-                <img className='category-pic_s' src={braceletIcon}></img>
+                <img className='category-pic_s' src={braceletIcon} alt="браслеты"></img>
               </div>
               <h2 className='category-title'>Браслеты</h2>
             </a>
@@ -75,7 +78,7 @@ export default function MainPage({ onCardClick, onLikeClick, products, setProduc
           <li className="categories-item">
             <a href='/catalog/?category=102' className="categories-link">
               <div className='category-cover'>
-                <img className='category-pic_m' src={pendIcon}></img>
+                <img className='category-pic_m' src={pendIcon} alt="подвески"></img>
               </div>
               <h2 className='category-title'>Подвески</h2>
             </a>
@@ -84,7 +87,7 @@ export default function MainPage({ onCardClick, onLikeClick, products, setProduc
           <li className="categories-item">
             <a href='/catalog/?category=28' className="categories-link">
               <div className='category-cover'>
-                <img style={{ marginTop: '15px' }} className='category-pic_m' src={neckIcon}></img>
+                <img style={{ marginTop: '15px' }} className='category-pic_m' src={neckIcon} alt="колье"></img>
               </div>
               <h2 className='category-title'>Колье</h2>
             </a>
@@ -92,7 +95,7 @@ export default function MainPage({ onCardClick, onLikeClick, products, setProduc
           <li className="categories-item">
             <a href='/catalog/?category=167' className="categories-link">
               <div className='category-cover'>
-                <img style={{ marginTop: '10px' }} className='category-pic_s' src={complecticon}></img>
+                <img style={{ marginTop: '10px' }} className='category-pic_s' src={complectIcon} alt="комплекты"></img>
               </div>
               <h2 className='category-title'>Комплекты</h2>
             </a>
@@ -100,12 +103,13 @@ export default function MainPage({ onCardClick, onLikeClick, products, setProduc
           <li className="categories-item">
             <a href='/catalog/?category=107' className="categories-link">
               <div className='category-cover'>
-                <img className='category-pic_s' src={broachIcon} style={{ marginTop: '10px' }}></img>
+                <img className='category-pic_s' src={broachIcon} style={{ marginTop: '10px' }} alt="броши"></img>
               </div>
               <h2 className='category-title'>Броши</h2>
             </a>
           </li>
         </ul>
+         )}
       </nav>
       <h2 className="categories-header">Рекомендуем:</h2>
       <Catalog

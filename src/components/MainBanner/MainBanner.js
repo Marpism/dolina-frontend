@@ -3,6 +3,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './MainPage.css';
 import { useMediaQuery } from 'react-responsive';
+import Skeleton from 'react-loading-skeleton';
 import ban1 from '../../images/ban1.jpg';
 import ban1m from '../../images/ban1_m.jpg';
 import ban2 from '../../images/ban2.jpg';
@@ -28,11 +29,14 @@ export default function MainBanner() {
 
   const isBigScreen = useMediaQuery({ minWidth: 768 }); // надо бы перенести в константы
   const isSmallScreen = useMediaQuery({ maxWidth: 767 });
+  const pictures = [ ban1, ban2, ban3, ban4, ban5 ];
+  const mobilePictures = [ban1m, ban2m, ban3m, ban4m, ban5m];
+
 
   return (
     <>
-      {isBigScreen &&
-        <div className='main-banner'>
+      {isBigScreen && (!pictures ? <Skeleton height={450} width="100%" /> :
+      <div className='main-banner'>
           <Slider {...settings}>
             <div className='main-banner__slide'>
               <a className='main-banner__link' href='/catalog/?masterpiece=1'><img className='main-banner__pic' src={ban1} alt="Slide 1" /></a>
@@ -50,10 +54,11 @@ export default function MainBanner() {
               <a className='main-banner__link' href='/catalog/?tags=19'><img className='main-banner__pic' src={ban4} alt="Slide 4" /></a>
             </div>
           </Slider>
-        </div>
+        </div> )
+        
       }
 
-      {isSmallScreen &&
+      {isSmallScreen && (!mobilePictures ? <Skeleton height={230} width="100%" /> : 
         <div className='main-banner'>
           <Slider {...settings}>
             <div className='main-banner__slide'>
@@ -73,6 +78,8 @@ export default function MainBanner() {
             </div>
           </Slider>
         </div>
+      )
+        
       }
     </>
 

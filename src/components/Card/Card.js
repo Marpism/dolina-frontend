@@ -11,7 +11,7 @@ export default function Card({ name, price, onCardClick, onLikeClick, id, slug, 
   const isSmallScreen = useMediaQuery({ maxWidth: 770 });
 
 
-  const mainPicture = `https://dolina.shop/photos/${pictures[0].path.slice(0, -4) + `_preview.jpg`}`;
+  const mainPicture = `https://dolina.shop/photos/${pictures[0].path.slice(0, -5) + `_preview.webp`}`;
   const [previewPicture, setPreviewPicture] = useState(mainPicture);
   const [isInStock, setIsInStock] = useState((inStock > 0 ? true : false));
   const [isNewLabel, setIsNewLabel] = useState(false);
@@ -61,10 +61,10 @@ export default function Card({ name, price, onCardClick, onLikeClick, id, slug, 
                     <div className='card__preview-container' key={pictures.indexOf(pic)}>
                       <div className='card__preview-mark'></div>
                       <img className='card__preview'
-                        src={`https://dolina.shop/photos/${pic.path.slice(0, -4) + `_preview.jpg`}`}
+                        src={`https://dolina.shop/photos/${pic.path.slice(0, -5) + `_preview.webp`}`}
                         alt={name}
                         onMouseOver={() => {
-                          setPreviewPicture(`https://dolina.shop/photos/${pic.path.slice(0, -4) + `_preview.jpg`}`)
+                          setPreviewPicture(`https://dolina.shop/photos/${pic.path.slice(0, -5) + `_preview.webp`}`)
                         }}
                       ></img>
                     </div>

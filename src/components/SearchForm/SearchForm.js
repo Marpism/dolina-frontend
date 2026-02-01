@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function SearchForm({ search, setSearch, productFilters, setProductFilters, onBurgerClose, isBurgerOpen }) {
   const isBigScreen = useMediaQuery({ minWidth: 768 }); // надо бы перенести в константы
-  const isSmallScreen = useMediaQuery({ maxWidth: 520 });
+  const isSmallScreen = useMediaQuery({ maxWidth: 765 });
 
   const [searchText, setSearchText] = useState('');
 

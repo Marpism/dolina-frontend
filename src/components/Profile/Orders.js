@@ -178,7 +178,7 @@ export default function Orders({ orders, terms, onCatClick, onBurgerClick, onBur
                           <div className='order__product-container' key={product.id}>
                             <div className='order_flex_row'>
                               <a href={`${'/product/' + product.slug + '-' + product.productId}`} target="_blank" rel="noreferrer">
-                                <img className='order__pic' alt={product.title} src={`https://dolina.shop/photos/${product.path.slice(0, -4) + `_preview.jpg`}`}></img>
+                                <img className='order__pic' alt={product.title} src={`https://dolina.shop/photos/${product.path.slice(0, -5) + `_preview.webp`}`}></img>
                               </a>
                               <div>
                                 <a className='cart-product__title' href={`${'/product/' + product.slug + '-' + product.productId}`} target="_blank" rel="noreferrer">

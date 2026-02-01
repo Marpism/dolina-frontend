@@ -16,7 +16,7 @@ export default function ContactPage({ terms, onCatClick, category, onBurgerClick
             <div className="contacts-row">
               <div className="contacts-icon contacts-icon__phone"></div>
               <div>
-                <p className="contacts-maintext">8 (800) 200 17 05</p>
+                <p><a className="contacts-maintext" href='tel:88002001705'>8 (800) 200 17 05</a></p>
                 <p className="contacts-caption">Звонок бесплатный по России</p>
               </div>
             </div>
@@ -24,7 +24,7 @@ export default function ContactPage({ terms, onCatClick, category, onBurgerClick
             <div className="contacts-row">
               <div className="contacts-icon contacts-icon__mail"></div>
               <div>
-                <p className="contacts-maintext">info@dolina.shop</p>
+                <p><a className="contacts-maintext" href="mailto:info@dolina.shop">info@dolina.shop</a></p>
                 <p className="contacts-caption">По всем вопросам</p>
               </div>
             </div>

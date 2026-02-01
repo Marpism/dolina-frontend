@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function CartProduct({ name, price, salePrice, onCardClick, pictures, id, sku, cartDetails, onRemoveClick, savedProducts, onLikeClick, inStock, slug }) {
 
-  const mainPicture = `https://dolina.shop/photos/${pictures[0].path.slice(0, -4) + `_preview.jpg`}`;
+  const mainPicture = `https://dolina.shop/photos/${pictures[0].path.slice(0, -5) + `_preview.webp`}`;
   const [isChecked, setIsChecked] = useState(true);
 
   function onLike() {

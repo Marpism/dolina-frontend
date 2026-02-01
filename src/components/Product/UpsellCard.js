@@ -6,7 +6,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 export default function UpsellCard({ name, price, inStock, onCardClick, onLikeClick, id, slug, pictures, isUnique, savedProducts }) {
 
-  const mainPicture = `https://dolina.shop/photos/${pictures[0].path.slice(0, -4) + `_preview.jpg`}`;
+  const mainPicture = `https://dolina.shop/photos/${pictures[0].path.slice(0, -5) + `_preview.webp`}`;
   const isBigScreen = useMediaQuery({ minWidth: 771 }); // надо бы перенести в константы
   const isSmallScreen = useMediaQuery({ maxWidth: 770 });
   const [isAvailable, setIsAviable] = useState((inStock > 0 ? true : false));

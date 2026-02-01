@@ -65,6 +65,19 @@
   }
 }
 
+@media screen and (max-width: 916px) {
+  .catalog-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .load-more_button {
+    margin-bottom: 80px;
+    height: 35px;
+    width: 140px;
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .catalog-list {
     grid-template-columns: repeat(2, 1fr);

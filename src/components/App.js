@@ -379,7 +379,7 @@ function App() {
   useEffect(() => {
 
     // обновляем url просто
-    if (window.location.pathname.includes("catalog")) { // kolkhoz
+    if (window.location.pathname.includes("catalog")) {
 
       if (productFilters.category) {
         searchParams.set('category', productFilters.category);
@@ -482,7 +482,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         {!window.location.pathname.includes("administration") &&
-          <div className='header_block_1'>
+          <div className='header_top'>
             <div className='header__container'>
               <div>
                 <NavLink to='/delivery' className='navlink_size_s color_white' >Доставка и оплата</NavLink>
@@ -490,8 +490,8 @@ function App() {
                 <NavLink to='/contacts' className='navlink_size_s color_white' >Контакты</NavLink>
                 <NavLink to='/reviews' className='navlink_size_s color_white' >Отзывы</NavLink>
               </div>
-              <p className='.navlink_size_s color_white'>
-                8 800 200 17 05</p>
+              <p className='color_white'>
+                <a className='navlink_size_s color_white' href='tel:88002001705'>8 800 200 17 05</a></p>
             </div>
           </div>
         }

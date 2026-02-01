@@ -25,7 +25,7 @@ export default function GalleryPopup({ images, isOpen, onClose, alt }) {
                   document.querySelector('#' + 'img' + images.indexOf(img)).scrollIntoView({ behavior: "smooth" });
                 }}>
                   <img alt={alt} className={`gallery-popup__image-preview ${(images.indexOf(img) === 0) && 'popup__image_active-border'}`}
-                    src={`https://dolina.shop/photos/${img.path.slice(0, -4) + `_preview.jpg`}`}
+                    src={`https://dolina.shop/photos/${img.path.slice(0, -5) + `_preview.webp`}`}
                   ></img>
                 </span>
 

@@ -87,6 +87,7 @@
 .sorting-area {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -257,7 +258,7 @@
 @media screen and (max-width: 560px) {
   .sorting-content {
     position: fixed;
-    top: 250px;
+    top: 270px;
     left: 10px;
     width: 80%;
     max-height: 300px;

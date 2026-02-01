@@ -124,7 +124,7 @@ export default function Product({ productData, onLikeClick, savedProducts, onAdd
   }, [productData]);
 
   useEffect(() => {
-    if (cart) { // НАКОЛХОЗИЛА ПО-БЫСТРОМУ, ПОТОМУ ЧТО В ПУСТОЙ КОРЗИНЕ ВЫХОДИЛА ОШИБКА
+    if (cart) { // переделать
       if (savedProducts.includes(productData.productId)) {
         setIsSaved(true);
       } else {
@@ -197,7 +197,7 @@ export default function Product({ productData, onLikeClick, savedProducts, onAdd
               {pictures.length > 6 && <button type='button' className='product__nav-button product__up-button pointer' onClick={scrollUp} />}
               {pictures.map((picture) => (
                 <div className='gallery__preview-container' key={pictures.indexOf(picture)}>
-                  <img className={`gallery__preview ${(pictures.indexOf(picture) === 0) && 'gallery_active-border'}`} alt={productData.title || <Skeleton count={10} />} src={`https://dolina.shop/photos/${picture.path.slice(0, -4) + `_preview.jpg`}`} onClick={(evt) => {
+                  <img className={`gallery__preview ${(pictures.indexOf(picture) === 0) && 'gallery_active-border'}`} alt={productData.title || <Skeleton count={10} />} src={`https://dolina.shop/photos/${picture.path.slice(0, -5) + `_preview.webp`}`} onClick={(evt) => {
                     setIsPreview(`https://dolina.shop/photos/${picture.path}`);
                     document.querySelector('.gallery_active-border').classList.remove('gallery_active-border');
                     evt.target.classList.add('gallery_active-border');
@@ -557,7 +557,7 @@ export default function Product({ productData, onLikeClick, savedProducts, onAdd
                     {stone.ancient ? <h3 className='about-stone__subheader'>В мировой культуре</h3> : null}
                     <p className='about-stone__maintext'>{formatTextWithLineBreaks(stone.ancient)}</p>
                   </div>
-                  <img className='about-stone__pic' alt={stone.title} src={`https://dolina.shop/photos/stones/${stone.mainPicture.slice(0, -4) + `_preview.jpg`}`}></img>
+                  <img className='about-stone__pic' alt={stone.title} src={`https://dolina.shop/photos/stones/${stone.mainPicture.slice(0, -5) + `_preview.webp`}`}></img>
 
                 </div>
               </section>

@@ -20,7 +20,7 @@ export default function MobileSlider({ pictures }) {
       <Slider {...settings}>
         {pictures.map((picture, index) => (
           <div key={index}>
-            <img className='card__image' src={`https://dolina.shop/photos/${picture.path.slice(0, -4) + `_preview.jpg`}`} alt={`Photo ${index}`} />
+            <img className='card__image' src={`https://dolina.shop/photos/${picture.path.slice(0, -5) + `_preview.webp`}`} alt={`Photo ${index}`} />
           </div>
         ))}
       </Slider>

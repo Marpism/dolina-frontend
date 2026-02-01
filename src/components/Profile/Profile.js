@@ -149,7 +149,7 @@ export default function Profile({ savedProducts, orders, onUpdateUser, onSignout
               <ul className='profile__wishlist_ul'>
                 {wishlistPreviews.map((product) => (
                   <li className='profile__wishlist_li' key={product.pictures[0].path}>
-                    <img className='profile__wishlist-pic' src={`https://dolina.shop/photos/${product.pictures[0].path.slice(0, -4) + `_preview.jpg`}`}></img>
+                    <img className='profile__wishlist-pic' src={`https://dolina.shop/photos/${product.pictures[0].path.slice(0, -5) + `_preview.webp`}`}></img>
                   </li>
                 ))}
                 {(wishlist.length > 4) &&

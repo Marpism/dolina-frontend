@@ -5,7 +5,7 @@ export default function PhoneModal({ isOpen, onClose }) {
 
   return (
     <div className={isOpen ? 'modal-container modal-container_visible' : 'modal-container'}>
-      <button type="button" class="modal__close-button" onClick={onClose}>× закрыть</button>
+      <button type="button" className="modal__close-button" onClick={onClose}>× закрыть</button>
       <div className='modal-container_grid'>
         <div>
           <div className='modal-container_text'>Специалист по камням Евгения — консультация и <b>оформление заказа по телефону!</b> Звоните!</div>

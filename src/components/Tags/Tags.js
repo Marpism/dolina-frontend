@@ -454,7 +454,7 @@ export default function Tags({
                     className='sorting-dropdown__button pointer'
                     onClick={(event) => toggleDropdown(8, event)}
                   >
-                    {selectedSizes.length > 0 ? `Размеры (${selectedSizes.length}) ` : 'Размеры  (${selectedSizes.length}) '}
+                    {selectedSizes.length > 0 ? `Размеры (${selectedSizes.length}) ` : 'Размеры'}
                     <img src={caret} alt="caret" style={{ marginLeft: '5px' }} />
                   </button>
 

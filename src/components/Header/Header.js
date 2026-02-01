@@ -12,7 +12,7 @@ import { HARDCODED_CATEGORIES } from '../../utils/constants';
 
 
 export default function Header({ terms, onCatClick, activeCategory, isBurgerOpen, onBurgerClose, search, setSearch, cart, orders, productFilters, setProductFilters, isLoggedIn }) {
-  const isBigScreen = useMediaQuery({ minWidth: 768 }); // надо бы перенести в константы
+  const isBigScreen = useMediaQuery({ minWidth: 521 }); // надо бы перенести в константы
   const isSmallScreen = useMediaQuery({ maxWidth: 520 });
   const [cartNumber, setCartNumber] = useState(0);
 
@@ -41,7 +41,7 @@ export default function Header({ terms, onCatClick, activeCategory, isBurgerOpen
   return (
     <>
       {isBigScreen && (<header className="header">
-        <div className='header_block_2'>
+        <div className='header_middle'>
           <Link to="/">
             <img src={logo} className="logo_theme_light" alt="Логотип" onClick={resetCategory} />
           </Link>
@@ -50,7 +50,7 @@ export default function Header({ terms, onCatClick, activeCategory, isBurgerOpen
             cartNumber={cartNumber}
             isLoggedIn={isLoggedIn} />
         </div>
-        <nav className='header_block_3'>
+        <nav className='header_below'>
           <div className='header__menu'>
             <NavLink to='/catalog/' className='navlink_size_m' onClick={resetCategory}>Каталог</NavLink>
             {
