@@ -1,14 +1,22 @@
-import Form from './Form';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { EMAIL_REGEXP } from '../../utils/constants';
+import Form from "./Form";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { EMAIL_REGEXP } from "../../utils/constants";
 
-export default function LoginForm({ onLogin, inputError, terms, onCatClick, category, search, setSearch, isLoggedIn }) {
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailValidationError, setEmailValidationError] = useState('');
-  const [passwordValidationError, setPasswordValidationError] = useState('');
+export default function LoginForm({
+  onLogin,
+  inputError,
+  terms,
+  onCatClick,
+  category,
+  search,
+  setSearch,
+  isLoggedIn,
+}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailValidationError, setEmailValidationError] = useState("");
+  const [passwordValidationError, setPasswordValidationError] = useState("");
   const [submitDisabled, setSubmitDisabled] = useState(true);
 
   useEffect(() => {
@@ -23,9 +31,9 @@ export default function LoginForm({ onLogin, inputError, terms, onCatClick, cate
     setEmail(e.target.value);
 
     if (EMAIL_REGEXP.test(e.target.value)) {
-      setEmailValidationError('');
+      setEmailValidationError("");
     } else {
-      setEmailValidationError('Введён некорректный email');
+      setEmailValidationError("Введён некорректный email");
     }
   }
 
@@ -33,9 +41,9 @@ export default function LoginForm({ onLogin, inputError, terms, onCatClick, cate
     setPassword(e.target.value);
 
     if (e.target.value.length > 5) {
-      setPasswordValidationError('');
+      setPasswordValidationError("");
     } else {
-      setPasswordValidationError('Пароль должен быть длиннее 6 символов');
+      setPasswordValidationError("Пароль должен быть длиннее 6 символов");
     }
   }
 
@@ -58,7 +66,9 @@ export default function LoginForm({ onLogin, inputError, terms, onCatClick, cate
       setSearch={setSearch}
       isLoggedIn={isLoggedIn}
     >
-      <label htmlFor="email" className='form__input-label'>E-mail</label>
+      <label htmlFor="email" className="form__input-label">
+        E-mail
+      </label>
       <input
         className="form__input"
         placeholder="Введите e-mail"
@@ -68,10 +78,12 @@ export default function LoginForm({ onLogin, inputError, terms, onCatClick, cate
         minLength={2}
         maxLength={30}
         onChange={handleEmailChange}
-        value={email || ''}
+        value={email || ""}
       ></input>
-      <p className='input__error'>{emailValidationError}</p>
-      <label htmlFor="password" className='form__input-label'>Пароль</label>
+      <p className="input__error">{emailValidationError}</p>
+      <label htmlFor="password" className="form__input-label">
+        Пароль
+      </label>
       <input
         className="form__input"
         placeholder="Введите пароль"
@@ -81,12 +93,13 @@ export default function LoginForm({ onLogin, inputError, terms, onCatClick, cate
         minLength={6}
         maxLength={30}
         onChange={handlePasswordChange}
-        value={password || ''}
+        value={password || ""}
       ></input>
-      <p className='input__error'>{passwordValidationError}</p>
-      <p className='input__error'>{inputError}</p>
-      <Link to='/forgot_password' className='forgot-link'>Забыли пароль?</Link>
-
+      <p className="input__error">{passwordValidationError}</p>
+      <p className="input__error">{inputError}</p>
+      <Link to="/forgot_password" className="forgot-link">
+        Забыли пароль?
+      </Link>
     </Form>
-  )
+  );
 }

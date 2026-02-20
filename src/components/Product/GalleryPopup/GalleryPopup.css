@@ -11,7 +11,9 @@
   visibility: hidden;
   justify-content: center;
   overflow-y: scroll;
-  transition: visibility 0.3s, opacity 0.3s;
+  transition:
+    visibility 0.3s,
+    opacity 0.3s;
 }
 
 .popup_opened {

@@ -1,17 +1,51 @@
 import Catalog from "../Catalog/Catalog";
 import MobileNavBar from "../MobileNavBar/MobileNavBar";
 import Tags from "../Tags/Tags";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-export default function CatalogPage({ onCardClick, onLikeClick, products, setProducts, savedProducts, isLoggedIn, terms, onCatClick, category, tags, onTagClick, onBurgerClick, onBurgerClose, isBurgerOpen, search, setSearch, orders, cart, sortBy, setSortBy, sortOrder, setSortOrder, fetchProducts, productFilters, setProductFilters, isLoadingMore, showLoadMore, catalogLoading, onColorClick, onSizeClick }) {
-
+export default function CatalogPage({
+  onCardClick,
+  onLikeClick,
+  products,
+  setProducts,
+  savedProducts,
+  isLoggedIn,
+  terms,
+  onCatClick,
+  category,
+  tags,
+  onTagClick,
+  onBurgerClick,
+  onBurgerClose,
+  isBurgerOpen,
+  search,
+  setSearch,
+  orders,
+  cart,
+  sortBy,
+  setSortBy,
+  sortOrder,
+  setSortOrder,
+  fetchProducts,
+  productFilters,
+  setProductFilters,
+  isLoadingMore,
+  showLoadMore,
+  catalogLoading,
+  onColorClick,
+  onSizeClick,
+}) {
   useEffect(() => {
-    document.title = "Каталог — Долина самоцветов"
+    document.title = "Каталог — Долина самоцветов";
   }, []);
 
   return (
     <>
-      {productFilters.search && <div className='search_results_title'>Результаты поиска по запросу "{productFilters.search}"</div>}
+      {productFilters.search && (
+        <div className="search_results_title">
+          Результаты поиска по запросу "{productFilters.search}"
+        </div>
+      )}
       <Tags
         terms={terms}
         tags={terms.tags}
@@ -52,7 +86,8 @@ export default function CatalogPage({ onCardClick, onLikeClick, products, setPro
         cart={cart}
         onCatClick={onCatClick}
         orders={orders}
-        isLoggedIn={isLoggedIn} />
+        isLoggedIn={isLoggedIn}
+      />
     </>
-  )
+  );
 }

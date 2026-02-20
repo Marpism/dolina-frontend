@@ -1,26 +1,32 @@
-import './Crumbs.css';
+import "./Crumbs.css";
 
 // пока чисто для виду
 export default function Crumbs() {
   return (
-    <div className='crumbs'>
-      <ul className='crumbs__list'>
-        <li className='crumb'>
-          <a href='#' className='crumb__link'>Главная  /</a>
+    <div className="crumbs">
+      <ul className="crumbs__list">
+        <li className="crumb">
+          <a href="#" className="crumb__link">
+            Главная /
+          </a>
         </li>
-        <li className='crumb'>
-          <a href='#' className='crumb__link'>Серьги  /</a>
+        <li className="crumb">
+          <a href="#" className="crumb__link">
+            Серьги /
+          </a>
         </li>
-        <li className='crumb'>
-          <a href='#' className='crumb__link'>Малахит  </a>
+        <li className="crumb">
+          <a href="#" className="crumb__link">
+            Малахит{" "}
+          </a>
         </li>
       </ul>
-      <div className='crumb-buttons'>
+      <div className="crumb-buttons">
         {/* <button type='button' className='crumb-button'/>
         <button type='button' className='crumb-button'/> */}
       </div>
     </div>
-  )
+  );
 }
 
 // import React from 'react';

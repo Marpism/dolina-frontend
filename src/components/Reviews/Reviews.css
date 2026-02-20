@@ -36,7 +36,6 @@
 }
 
 .review__maintext {
-  
 }
 
 .review__pic {
@@ -71,7 +70,7 @@
   border-radius: 4px;
   margin: 20px auto;
   cursor: pointer;
-  transition: 0.2s; 
+  transition: 0.2s;
 }
 
 .review__button_hidden {
@@ -83,7 +82,7 @@
 }
 
 .reviews__form-container {
-  background-color: #B2DFDB;
+  background-color: #b2dfdb;
   border-radius: 5px;
   display: none;
   max-width: 600px;
@@ -106,7 +105,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: 0.2s; 
+  transition: 0.2s;
   align-self: end;
 }
 
@@ -204,15 +203,15 @@
   .review__avatar {
     margin: 10px 0;
   }
- 
+
   .review__name {
     margin: 15px 0;
   }
-  
+
   .review__date {
     margin: 6px 0;
   }
-  
+
   .review__title {
     margin: 6px 0;
   }

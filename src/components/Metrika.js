@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const YandexMetrika = () => {
   const location = useLocation();
@@ -7,7 +7,7 @@ const YandexMetrika = () => {
 
   useEffect(() => {
     if (window.ym) {
-      window.ym(id, 'hit', location.pathname + location.search);
+      window.ym(id, "hit", location.pathname + location.search);
     }
   }, [location]);
 

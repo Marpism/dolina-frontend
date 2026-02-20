@@ -1,14 +1,26 @@
 import MobileNavBar from "../MobileNavBar/MobileNavBar";
-import './ContactPage.css';
+import "./ContactPage.css";
 import { useEffect } from "react";
 import Reviews from "../Reviews/Reviews";
-import ReviewsForm from '../Reviews/ReviewsForm';
+import ReviewsForm from "../Reviews/ReviewsForm";
 
-export default function ReviewsPage({ reviews, terms, onCatClick, category, onBurgerClick, onBurgerClose, isBurgerOpen, search, setSearch, orders, cart, onsubmit, isLoggedIn }) {
-
-
+export default function ReviewsPage({
+  reviews,
+  terms,
+  onCatClick,
+  category,
+  onBurgerClick,
+  onBurgerClose,
+  isBurgerOpen,
+  search,
+  setSearch,
+  orders,
+  cart,
+  onsubmit,
+  isLoggedIn,
+}) {
   useEffect(() => {
-    document.title = 'Отзывы — Долина самоцветов';
+    document.title = "Отзывы — Долина самоцветов";
   }, []);
 
   return (
@@ -16,11 +28,8 @@ export default function ReviewsPage({ reviews, terms, onCatClick, category, onBu
       <main className="reviews">
         <h1 className="wishlist-header">Отзывы</h1>
         <div className="reviews-container">
-          <ReviewsForm
-            onsubmit={onsubmit} />
-          <Reviews
-            reviews={reviews}
-          />
+          <ReviewsForm onsubmit={onsubmit} />
+          <Reviews reviews={reviews} />
         </div>
       </main>
       <MobileNavBar
@@ -33,5 +42,5 @@ export default function ReviewsPage({ reviews, terms, onCatClick, category, onBu
         isLoggedIn={isLoggedIn}
       />
     </>
-  )
+  );
 }

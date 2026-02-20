@@ -1,14 +1,12 @@
-import './Form.css';
-import { Link, useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import "./Form.css";
+import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { EMAIL_REGEXP } from '../../utils/constants';
-
+import { EMAIL_REGEXP } from "../../utils/constants";
 
 export default function ForgotPasswordForm({ onSubmit }) {
-
-  const [email, setEmail] = useState('');
-  const [emailValidationError, setEmailValidationError] = useState('');
+  const [email, setEmail] = useState("");
+  const [emailValidationError, setEmailValidationError] = useState("");
   const [isSent, setIsSent] = useState(false);
   const navigate = useNavigate();
 
@@ -19,11 +17,11 @@ export default function ForgotPasswordForm({ onSubmit }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (EMAIL_REGEXP.test(email)) {
-      setEmailValidationError('');
+      setEmailValidationError("");
       onSubmit(email);
       setIsSent(true);
     } else {
-      setEmailValidationError('Введён некорректный email');
+      setEmailValidationError("Введён некорректный email");
     }
   }
 
@@ -31,24 +29,28 @@ export default function ForgotPasswordForm({ onSubmit }) {
     setEmail(e.target.value);
 
     if (EMAIL_REGEXP.test(e.target.value)) {
-      setEmailValidationError('');
+      setEmailValidationError("");
     } else {
-      setEmailValidationError('Введён некорректный email');
+      setEmailValidationError("Введён некорректный email");
     }
   }
 
   return (
     <>
-      <body className='form-page'>
-
-        {isSent
-          ? <div className='success-message'>Готово! Выслали вам на почту ссылку для изменения пароля.</div>
-          : <div className="form">
-            <section className='form__container'>
+      <body className="form-page">
+        {isSent ? (
+          <div className="success-message">
+            Готово! Выслали вам на почту ссылку для изменения пароля.
+          </div>
+        ) : (
+          <div className="form">
+            <section className="form__container">
               <form name={`forgot-form`} onSubmit={handleSubmit}>
                 <fieldset className="form__fieldset">
                   <h1 className="form__title">Изменение пароля</h1>
-                  <label htmlFor="email" className='form__input-label'>E-mail</label>
+                  <label htmlFor="email" className="form__input-label">
+                    E-mail
+                  </label>
                   <input
                     className="form__input"
                     placeholder="Введите e-mail"
@@ -58,26 +60,30 @@ export default function ForgotPasswordForm({ onSubmit }) {
                     minLength={2}
                     maxLength={30}
                     onChange={handleEmailChange}
-                    value={email || ''}
+                    value={email || ""}
                   ></input>
-                  <p className='input__error'>{emailValidationError}</p>
-                  <button type="submit"
+                  <p className="input__error">{emailValidationError}</p>
+                  <button
+                    type="submit"
                     name="submit"
                     className="form__submit-button hover_type_normal"
-                  >Продолжить</button>
+                  >
+                    Продолжить
+                  </button>
                 </fieldset>
               </form>
             </section>
             <div id="buttonContainerId"></div>
-            <div className='form__go-back' onClick={goBack}>&#8656; Назад</div>
-          </div>}
-
+            <div className="form__go-back" onClick={goBack}>
+              &#8656; Назад
+            </div>
+          </div>
+        )}
       </body>
     </>
-  )
+  );
 }
 
 // сделать:
 // - чтобы инпут был пустой по клику
-// - чтобы лэйблы появлялись после этого 
-
+// - чтобы лэйблы появлялись после этого

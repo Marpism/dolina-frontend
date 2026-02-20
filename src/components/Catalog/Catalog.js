@@ -1,19 +1,55 @@
-import './Catalog.css';
-import Card from '../Card/Card';
+import "./Catalog.css";
+import Card from "../Card/Card";
 
-export default function Catalog({ onCardClick, products, setProducts, onLikeClick, savedProducts, search, setSearch, fetchProducts, productFilters, setProductFilters = false, isLoadingMore, showLoadMore = false, catalogLoading = false, onCatClick }) {
-
+export default function Catalog({
+  onCardClick,
+  products,
+  setProducts,
+  onLikeClick,
+  savedProducts,
+  search,
+  setSearch,
+  fetchProducts,
+  productFilters,
+  setProductFilters = false,
+  isLoadingMore,
+  showLoadMore = false,
+  catalogLoading = false,
+  onCatClick,
+}) {
   function resetFilters() {
-    onCatClick('');
+    onCatClick("");
   }
 
   return (
-    <section className={`catalog ${catalogLoading ? 'loading' : ''}`}>
-      {products.length == 0 && productFilters && productFilters.search.length > 0 && <><br />Ничего не найдено</>}
-      {products.length == 0 && productFilters && (productFilters.colors.length > 0 || productFilters.masterpiece || productFilters.iridescent) && <><br />По вашим параметрам ничего не нашлось. Попробуйте <span className='filters_reset hover_type_normal pointer' onClick={() => resetFilters('')}>сбросить фильтры</span>.</>}
-      <ul className='catalog-list'>
-        {products.map((product) =>
-        (
+    <section className={`catalog ${catalogLoading ? "loading" : ""}`}>
+      {products.length == 0 &&
+        productFilters &&
+        productFilters.search.length > 0 && (
+          <>
+            <br />
+            Ничего не найдено
+          </>
+        )}
+      {products.length == 0 &&
+        productFilters &&
+        (productFilters.colors.length > 0 ||
+          productFilters.masterpiece ||
+          productFilters.iridescent) && (
+          <>
+            <br />
+            По вашим параметрам ничего не нашлось. Попробуйте{" "}
+            <span
+              className="filters_reset hover_type_normal pointer"
+              onClick={() => resetFilters("")}
+            >
+              сбросить фильтры
+            </span>
+            .
+          </>
+        )}
+      <ul className="catalog-list">
+        {products.map((product) => (
           <Card
             id={product.productId}
             slug={product.slug}
@@ -33,15 +69,22 @@ export default function Catalog({ onCardClick, products, setProducts, onLikeClic
           ></Card>
         ))}
       </ul>
-      {showLoadMore &&
-        <div className='load-more_button-conainer'>
-          <button className={'load-more_button' + (isLoadingMore ? ' loading' : '')} onClick={() => setProductFilters(prevFilters => ({
-            ...prevFilters,
-            offset: productFilters.offset + productFilters.pageSize
-          }))} disabled={isLoadingMore}>
-            {isLoadingMore ? 'загружаем...' : 'загрузить ещё'}
-          </button></div>
-      }
+      {showLoadMore && (
+        <div className="load-more_button-conainer">
+          <button
+            className={"load-more_button" + (isLoadingMore ? " loading" : "")}
+            onClick={() =>
+              setProductFilters((prevFilters) => ({
+                ...prevFilters,
+                offset: productFilters.offset + productFilters.pageSize,
+              }))
+            }
+            disabled={isLoadingMore}
+          >
+            {isLoadingMore ? "загружаем..." : "загрузить ещё"}
+          </button>
+        </div>
+      )}
     </section>
-  )
+  );
 }

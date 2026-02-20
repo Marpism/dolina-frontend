@@ -1,0 +1,23 @@
+module.exports = {
+  rules: {
+    'value-keyword-case': ['lower', { camelCaseSvgKeywords: true }],
+    'property-no-unknown': true,
+    'declaration-block-no-duplicate-properties': true,
+    'media-feature-name-no-unknown': true,
+    'comment-no-empty': true,
+    'no-descending-specificity': true,
+    'no-duplicate-selectors': true,
+    'no-invalid-position-at-import-rule': true,
+    'color-function-notation': 'modern',
+    'color-hex-length': 'short',
+    'length-zero-no-unit': true,
+    'function-url-quotes': 'never',
+    'shorthand-property-no-redundant-values': true,
+    'declaration-block-single-line-max-declarations': 1,
+    'selector-type-case': 'lower',
+    'rule-empty-line-before': 'always',
+    'at-rule-empty-line-before': 'always',
+    'selector-class-pattern': null,
+    'font-family-name-quotes': 'always-where-recommended',
+  },
+};

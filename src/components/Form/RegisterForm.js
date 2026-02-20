@@ -1,15 +1,23 @@
-import Form from './Form';
-import { useEffect, useState } from 'react';
-import { EMAIL_REGEXP } from '../../utils/constants';
+import Form from "./Form";
+import { useEffect, useState } from "react";
+import { EMAIL_REGEXP } from "../../utils/constants";
 
-export default function RegisterForm({ onRegistration, inputError, terms, onCatClick, category, search, setSearch, isLoggedIn }) {
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [nameValidationError, setNameValidationError] = useState('');
-  const [emailValidationError, setEmailValidationError] = useState('');
-  const [passwordValidationError, setPasswordValidationError] = useState('');
+export default function RegisterForm({
+  onRegistration,
+  inputError,
+  terms,
+  onCatClick,
+  category,
+  search,
+  setSearch,
+  isLoggedIn,
+}) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [nameValidationError, setNameValidationError] = useState("");
+  const [emailValidationError, setEmailValidationError] = useState("");
+  const [passwordValidationError, setPasswordValidationError] = useState("");
   const [submitDisabled, setSubmitDisabled] = useState(true);
 
   useEffect(() => {
@@ -23,37 +31,37 @@ export default function RegisterForm({ onRegistration, inputError, terms, onCatC
   function handleSubmit(e) {
     e.preventDefault();
     if (EMAIL_REGEXP.test(email)) {
-      setEmailValidationError('');
+      setEmailValidationError("");
       onRegistration(name, email, password);
     } else {
-      setEmailValidationError('Введён некорректный email');
+      setEmailValidationError("Введён некорректный email");
     }
   }
 
   function handleNameChange(e) {
     setName(e.target.value);
     if (e.target.value.length > 1) {
-      setNameValidationError('');
+      setNameValidationError("");
     } else {
-      setNameValidationError('Имя не может быть короче 2 букв');
+      setNameValidationError("Имя не может быть короче 2 букв");
     }
   }
 
   function handleEmailChange(e) {
     setEmail(e.target.value);
     if (EMAIL_REGEXP.test(e.target.value)) {
-      setEmailValidationError('');
+      setEmailValidationError("");
     } else {
-      setEmailValidationError('Введён некорректный email');
+      setEmailValidationError("Введён некорректный email");
     }
   }
 
   function handlePasswordChange(e) {
     setPassword(e.target.value);
     if (e.target.value.length > 5) {
-      setPasswordValidationError('');
+      setPasswordValidationError("");
     } else {
-      setPasswordValidationError('Пароль должен быть длиннее 6 символов');
+      setPasswordValidationError("Пароль должен быть длиннее 6 символов");
     }
   }
 
@@ -81,9 +89,9 @@ export default function RegisterForm({ onRegistration, inputError, terms, onCatC
         minLength={2}
         maxLength={30}
         onChange={handleNameChange}
-        value={name || ''}
+        value={name || ""}
       ></input>
-      <p className='input__error'>{nameValidationError}</p>
+      <p className="input__error">{nameValidationError}</p>
 
       {/* <label htmlFor="email" className='form__input-label'>E-mail</label> */}
       <input
@@ -95,10 +103,10 @@ export default function RegisterForm({ onRegistration, inputError, terms, onCatC
         minLength={2}
         maxLength={30}
         onChange={handleEmailChange}
-        value={email || ''}
+        value={email || ""}
       ></input>
 
-      <p className='input__error'>{emailValidationError}</p>
+      <p className="input__error">{emailValidationError}</p>
 
       {/* <label htmlFor="password" className='form__input-label'>Пароль</label> */}
       <input
@@ -110,11 +118,11 @@ export default function RegisterForm({ onRegistration, inputError, terms, onCatC
         minLength={8}
         maxLength={30}
         onChange={handlePasswordChange}
-        value={password || ''}
+        value={password || ""}
       ></input>
 
-      <p className='input__error'>{passwordValidationError}</p>
-      <p className='input__error'>{inputError}</p>
+      <p className="input__error">{passwordValidationError}</p>
+      <p className="input__error">{inputError}</p>
     </Form>
-  )
+  );
 }

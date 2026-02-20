@@ -9,14 +9,13 @@
   margin: 0 auto;
   font-family: "inter", Arial, sans-serif;
   position: relative;
-  
+
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
-
 
 /* Общие миксы */
 
